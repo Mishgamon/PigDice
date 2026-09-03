@@ -22,7 +22,7 @@ int main() {
     return 0;
 }
 
-void addscore(GameState &gs) {
+void add_score(GameState &gs) {
     gs.game_score += 10;
 }
 
