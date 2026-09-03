@@ -1,4 +1,6 @@
 #include <iostream>
+#include <ctime>
+//#include <ctslib>
 
 // Build your solution starting from this code.
 
@@ -58,6 +60,7 @@ void take_turn(GameState &game) {
 
 
 int roll_dice() {
+    srand(time(NULL));
     int x = (rand() % 6)+1;
     std::cout << "Die: " << x;
     return x;
@@ -76,7 +79,7 @@ game.choice=' ';
         if (game.game_score>=20)game.game_over=true;
 }
 
-std::cout << "\nYou finished with a final score of "<<game.game_score<<" in "<<game.turn_count<<" turn";
+std::cout << "\n\nYou finished with a final score of "<<game.game_score<<" in "<<game.turn_count<<" turn";
 if (game.turn_count!=1)std::cout << "s";
     std::cout<<"!\nThanks for playing PIG dice!";
 
