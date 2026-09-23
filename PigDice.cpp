@@ -26,7 +26,7 @@ public:
         std::cout << "Die: " << d_result;
 
     }
-    int get_result() {
+    int getResult() {//get_dieValue
         return d_result;
     }
     Die() {
@@ -37,8 +37,16 @@ public:
         if (numF%2==0&&numF<10&&numF>0)d_NumFaces=numF;
         else d_NumFaces=6;
     }
-    void morph(int numF) {
-        switch
+    void morph(int numF) {//set_numOfFaces
+        switch (numF) {
+            case 2:d_NumFaces=2; break;
+            case 4:d_NumFaces=4; break;
+            case 6:d_NumFaces=6; break;
+            case 8:d_NumFaces=8; break;
+        }
+    }
+    int getNumF() {//get_numOfFaces
+        return d_NumFaces;
     }
 };
 
