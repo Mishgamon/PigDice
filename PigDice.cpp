@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <random>
 
 // Build your solution starting from this code.
 
@@ -12,7 +13,35 @@ struct GameState {
     bool game_over = false;
     bool turn_over = false;
 };
-int roll_dice();
+class Die {
+private:
+    int d_result;
+    int d_NumFaces=6;
+public:
+    void rollDice() {
+        std::random_device srand;
+        std::mt19937 gen(srand());
+        std::uniform_int_distribution<> dist(1, 6);
+        d_result = dist(gen);
+        std::cout << "Die: " << d_result;
+
+    }
+    int get_result() {
+        return d_result;
+    }
+    Die() {
+        d_NumFaces=6;
+        d_result = 0;
+    }
+    Die(int numF) {
+        if (numF%2==0&&numF<10&&numF>0)d_NumFaces=numF;
+        else d_NumFaces=6;
+    }
+    void morph(int numF) {
+        switch
+    }
+};
+
 void add_score();
 void display_rules();
 void play_game(GameState &gs);
@@ -59,12 +88,6 @@ void take_turn(GameState &game) {
 
 
 
-int roll_dice() {
-    srand(time(NULL));
-    int x = (rand() % 6)+1;
-    std::cout << "Die: " << x;
-    return x;
-}
 
 void play_game(GameState &game) {
     while (!game.game_over) {
