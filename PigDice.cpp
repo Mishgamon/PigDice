@@ -15,8 +15,8 @@ struct GameState {
 };
 class Die {
 private:
-    int d_result;
-    int d_NumFaces=6;
+    int d_result;//dieValue
+    int d_NumFaces=6;//numOfFaces
 public:
     void rollDice() {
         std::random_device srand;
