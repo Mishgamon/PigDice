@@ -52,8 +52,8 @@ public:
 
 void add_score();
 void display_rules();
-void play_game(GameState &gs, Die &d);
-void take_turn(GameState &g, Die &d);
+void play_game(GameState &gs, Die &die);
+void take_turn(GameState &gs, Die &die);
 int main() {
     Die Caroto;
     GameState my_game; // instantiate a GameState object
@@ -71,25 +71,25 @@ void display_rules() {
 
 
 }
-void take_turn(GameState &game, Die &d) {
+void take_turn(GameState &game, Die &die) {
     std::cout << "\nroll or hold? (r/h): ";
     std::cin>>game.choice;
     if (game.choice == 'r') {
 
-            d.rollDice();
-            if (d.getResult()==1) {
+            die.rollDice();
+            if (die.getResult()==1) {
                 game.choice='h';
                 game.score_this_turn=0;
                 std::cout << "\nTurn over.  No score.";
             }else {
-                game.score_this_turn+=d.getResult();
+                game.score_this_turn+=die.getResult();
                 std::cout<<" - Running score this turn: "<<game.score_this_turn;
             }
         }else if (game.choice!='h'){
             std::cout << "\nInvalid Entry.  Please use 'r' for ''roll'' or 'h' for ''hold''.";
 
         }
-    if (game.choice != 'h') take_turn(game, d);
+    if (game.choice != 'h') take_turn(game, die);
 
     }
 
@@ -98,12 +98,12 @@ void take_turn(GameState &game, Die &d) {
 
 
 
-void play_game(GameState &game, Die &d) {
+void play_game(GameState &game, Die &die) {
     while (!game.game_over) {
     game.turn_count++;
     std::cout << "\nTURN " << game.turn_count << " - Game Score: " << game.game_score;
 game.score_this_turn=0;
-        take_turn(game, d);
+        take_turn(game, die);
         std::cout<<"\nScore banked this turn: "<<game.score_this_turn;
         game.game_score+=game.score_this_turn;
 game.choice=' ';
