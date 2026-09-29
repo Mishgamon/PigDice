@@ -4,7 +4,6 @@
 
 #ifndef PIGDICE_DIE_H //IF Not DEFined
 #define PIGDICE_DIE_H
-#include <random>
 
 
 class Die {

@@ -1,7 +1,4 @@
  #include <iostream>
-#include <ctime>
-#include <cstdlib>
-#include <random>
 #include "DEATH.h"
 // Build your solution starting from this code.
 

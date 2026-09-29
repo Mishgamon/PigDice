@@ -4,6 +4,7 @@
 
 #include "DEATH.h"
 #include <iostream>
+#include <random>
 Die::Die() {
     d_NumFaces=6;
     rollDice();
