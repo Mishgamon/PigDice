@@ -12,6 +12,14 @@ private:
     int d_result;//dieValue
     int d_NumFaces=6;//numOfFaces
 public:
+    Die() {
+        d_NumFaces=6;
+        rollDice();
+    }
+    Die(int numF) {
+        if (numF%2==0&&numF<10&&numF>0)d_NumFaces=numF;
+        else d_NumFaces=6;
+    }
     void rollDice() {
         std::random_device srand;
         std::mt19937 gen(srand());
@@ -23,14 +31,7 @@ public:
     int getResult() {//get_dieValue
         return d_result;
     }
-    Die() {
-        d_NumFaces=6;
-        rollDice();
-    }
-    Die(int numF) {
-        if (numF%2==0&&numF<10&&numF>0)d_NumFaces=numF;
-        else d_NumFaces=6;
-    }
+
     void morph(int numF) {//set_numOfFaces
         switch (numF) {
             case 2:d_NumFaces=2; break;

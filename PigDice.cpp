@@ -2,7 +2,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <random>
-#include "DIE.h"
+#include "DEATH.h"
 // Build your solution starting from this code.
 
 struct GameState {
