@@ -59,7 +59,7 @@ void take_turn(GameState &game) {
 
 
 
-void play_game(GameState &game, Die &die) {
+void play_game(GameState &game) {
     while (!game.game_over) {
     game.turn_count++;
     std::cout << "\nTURN " << game.turn_count << " - Game Score: " << game.game_score;

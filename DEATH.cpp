@@ -2,9 +2,10 @@
 // Created by administrator on 9/29/26.
 //
 
-#include "DEATH.h"
+
 #include <iostream>
 #include <random>
+#include "DEATH.h"
 Die::Die() {
     d_NumFaces=6;
     rollDice();
