@@ -37,7 +37,7 @@ void take_turn(GameState &game) {
     std::cin>>game.choice;
     if (game.choice == 'r') {
     Die die;
-
+        std::cout << "Die: " << die.getResult();
             if (die.getResult()==1) {
                 game.choice='h';
                 game.score_this_turn=0;

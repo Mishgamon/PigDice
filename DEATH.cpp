@@ -19,7 +19,7 @@ void Die::rollDice() {
     std::mt19937 gen(srand());
     std::uniform_int_distribution<> dist(1, 6);
     d_result = dist(gen);
-    std::cout << "Die: " << d_result;
+
 
 }
 int Die::getResult() {//get_dieValue
