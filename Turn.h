@@ -4,7 +4,7 @@
 
 #ifndef PIGDICE_TURN_H
 #define PIGDICE_TURN_H
-#include<"DEATH.h">
+#include"DEATH.h"
 
 class Turn {
 private://access specifier
@@ -21,6 +21,8 @@ public:
     void resetTurnOver();
     int getTurnCount();
     void resetGameOver();
+private:
+    void roll();
 };
 
 
