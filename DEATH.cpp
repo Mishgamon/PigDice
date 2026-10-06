@@ -22,18 +22,18 @@ void Die::rollDice() {
 
 
 }
-int Die::getResult() {//get_dieValue
+int Die::getResult() const{//get_dieValue
     return d_result;
 }
 
-void Die::morph(int numF) {//set_numOfFaces
-    switch (numF) {
-        case 2:d_NumFaces=2; break;
-        case 4:d_NumFaces=4; break;
-        case 6:d_NumFaces=6; break;
-        case 8:d_NumFaces=8; break;
-    }
-}
-int Die::getNumF() {//get_numOfFaces
-    return d_NumFaces;
-}
+// void Die::morph(int numF) {//set_numOfFaces
+//     switch (numF) {
+//         case 2:d_NumFaces=2; break;
+//         case 4:d_NumFaces=4; break;
+//         case 6:d_NumFaces=6; break;
+//         case 8:d_NumFaces=8; break;
+//     }
+// }
+// int Die::getNumF() {//get_numOfFaces
+//     return d_NumFaces;
+// }

@@ -14,9 +14,9 @@ public:
     Die();
     Die(int numF);
     void rollDice();
-    int getResult();
-    void morph(int numF);
-    int getNumF();
+    int getResult() const;
+    // void morph(int numF);
+    // int getNumF();
 };
 
 #endif //PIGDICE_DIE_H
