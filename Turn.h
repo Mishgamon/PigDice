@@ -8,7 +8,7 @@
 
 class Turn {
 private://access specifier
-    int m_turnCount;
+    static int m_turnCount;
     int m_scoreThisTurn;
     bool m_turnOver;
     char m_choice;
