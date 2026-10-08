@@ -28,6 +28,7 @@ void Turn::roll() {
 
 void Turn::resetTurnOver() {
     m_turnOver=false;
+      resetScoreThisTurn();
 }
 
 int Turn::getScoreThisTurn() {
@@ -40,7 +41,6 @@ int Turn::getTurnCount() {
 
 void Turn::takeTurn() {
       m_turnCount++;
-      m_scoreThisTurn=0;
       std::cout << "\nTURN " << m_turnCount << " - Game Score: ";
       while (!m_turnOver) {
           std::cout << "\nroll or hold? (r/h): ";
@@ -59,8 +59,8 @@ void Turn::takeTurn() {
 
 }
 
-void Turn::resetGameOver() {
-
+void Turn::resetScoreThisTurn() {
+m_scoreThisTurn=0;
 }
 
 

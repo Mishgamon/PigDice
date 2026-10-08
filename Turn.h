@@ -20,7 +20,7 @@ public:
     int getScoreThisTurn();
     void resetTurnOver();
     int getTurnCount();
-    void resetGameOver();
+    void resetScoreThisTurn();
 private:
     void roll();
 };
