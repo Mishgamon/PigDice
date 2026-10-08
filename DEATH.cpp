@@ -8,13 +8,13 @@
 #include "DEATH.h"
 Die::Die() {
     d_NumFaces=6;
-    rollDice();
+    roll();
 }
 Die::Die(int numF) {
     if (numF%2==0&&numF<10&&numF>0)d_NumFaces=numF;
     else d_NumFaces=6;
 }
-void Die::rollDice() {
+void Die::roll() {
     std::random_device srand;
     std::mt19937 gen(srand());
     std::uniform_int_distribution<> dist(1, 6);

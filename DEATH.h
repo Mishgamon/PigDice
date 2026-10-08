@@ -13,7 +13,7 @@ private:
 public:
     Die();
     Die(int numF);
-    void rollDice();
+    void roll();
     int getResult() const;
     // void morph(int numF);
     // int getNumF();

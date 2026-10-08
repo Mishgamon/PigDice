@@ -8,14 +8,14 @@
 
 class Turn {
 private://access specifier
-    static int m_turnCount;
+    int m_turnCount;
     int m_scoreThisTurn;
     bool m_turnOver;
     char m_choice;
     Die m_myDie;
 public:
     Turn();
-    Turn(int &gameScore);
+    Turn(int &Thing);
     void takeTurn();
     int getScoreThisTurn();
     void resetTurnOver();
