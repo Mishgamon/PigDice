@@ -13,6 +13,7 @@ private:
     int m_gameScore;
 public:
     PDGame();
+    int getGameScore();  //Step 1 of Workaround for whole-to-part info transfer
 private:
     void displayRules();
     void playGame();

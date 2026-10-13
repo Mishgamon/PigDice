@@ -3,15 +3,18 @@
 //
 #include<iostream>
 #include "Turn.h"
-
+#include "PDGame.h"// 88888888
 
   Turn::Turn() {
       m_turnCount=0;
-      m_myDie;
       m_scoreThisTurn=0;
       m_turnOver=false;
       m_choice=' ';
 }
+void Turn::setParentGame(PDGame* Papaoutai) {//Step 6 Eyes
+     m_parentGame=Papaoutai;
+  }
+
 void Turn::roll() {
       m_myDie.roll();
       std::cout << "Die: " << m_myDie.getResult();
@@ -41,7 +44,7 @@ int Turn::getTurnCount() {
 
 void Turn::takeTurn() {
       m_turnCount++;
-      std::cout << "\nTURN " << m_turnCount << " - Game Score: ";
+      std::cout << "\nTURN " << m_turnCount << " - Game Score: "<<m_parentGame->getGameScore();//9th Step. (The end)
       while (!m_turnOver) {
           std::cout << "\nroll or hold? (r/h): ";
           std::cin>>m_choice;

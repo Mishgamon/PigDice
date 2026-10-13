@@ -5,6 +5,8 @@
 #ifndef PIGDICE_TURN_H
 #define PIGDICE_TURN_H
 #include"DEATH.h"
+//#include "PDGame.h"
+class PDGame;//Part 3
 
 class Turn {
 private://access specifier
@@ -13,9 +15,10 @@ private://access specifier
     bool m_turnOver;
     char m_choice;
     Die m_myDie;
+    PDGame* m_parentGame = nullptr;//Step FOR
 public:
     Turn();
-    Turn(int &Thing);
+    void setParentGame(PDGame* Papaoutai);//Step 5, we go into OVERDRIVE
     void takeTurn();
     int getScoreThisTurn();
     void resetTurnOver();
