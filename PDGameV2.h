@@ -17,6 +17,7 @@ public:
     ~PDGameV2();
     std::string getPlayerName();
     void playGame();
+    int getScore();
 private:
     void displayRules();
 

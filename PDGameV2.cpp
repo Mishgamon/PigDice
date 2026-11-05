@@ -17,5 +17,10 @@ void PDGameV2::displayRules() {
 }
 
 void PDGameV2::playGame() {
+m_myTurn.takeTurn();
+    m_gameScore+=m_myTurn.getScoreThisTurn();
+}
 
+int PDGameV2::getScore() {
+    return m_gameScore;
 }
