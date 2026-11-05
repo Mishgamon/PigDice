@@ -7,7 +7,7 @@
 #include "Turn.h"
 
 class PDGame {
-private:
+protected:
     Turn m_myTurn;
     bool m_gameOver;
     int m_gameScore;
