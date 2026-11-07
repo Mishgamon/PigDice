@@ -10,15 +10,15 @@
 class Multiplayer {
     std::vector<PDGameV2> m_players;
     bool m_playerReachedTargetScore;
-    bool m_allGameOver;
+    bool m_allGameOver=0;
 public:
     Multiplayer();
     ~Multiplayer();
     void startAllGames();
 private:
-    int displayPoints();
+    int displayPoints(std::vector<PDGameV2> &players);
     bool targetScoreCheck(int score);
-    void declareWinner();
+    void declareWinner(std::vector<PDGameV2> &players);
 
 
 };

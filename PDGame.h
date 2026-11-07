@@ -9,8 +9,8 @@
 class PDGame {
 protected:
     Turn m_myTurn;
-    bool m_gameOver;
-    int m_gameScore;
+    bool m_gameOver=false;
+    int m_gameScore=0;
 public:
     PDGame();
     int getGameScore();  //Step 1 of Workaround for whole-to-part info transfer

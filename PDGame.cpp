@@ -9,7 +9,7 @@ PDGame::PDGame() {
     m_gameOver=false;
     m_gameScore=0;
     m_myTurn.setParentGame(this);//STEP SEPT
-    displayRules();
+    //displayRules();
    // playGame();
 }
 

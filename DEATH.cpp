@@ -19,6 +19,7 @@ void Die::roll() {
     std::mt19937 gen(srand());
     std::uniform_int_distribution<> dist(1, 6);
     d_result = dist(gen);
+    //d_result = (5);
 
 
 }
