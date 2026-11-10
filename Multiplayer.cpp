@@ -7,6 +7,7 @@
 
 void Multiplayer::startAllGames() {
     int playerz = 0;
+    bool repeat = true;
     std::string name;
     std::cout<<"How many people are playing?  ";
     std::cin>>playerz;
@@ -14,19 +15,24 @@ void Multiplayer::startAllGames() {
     int j = 1;
     for (int i = 0; i < playerz;i++) {
 
-        std::cout<<"Enter player "<<(i+1)<<"'s name: ";
-        std::cin>>name;
-        if (name.empty()) {
-            name = "Anonymous Player "+std::to_string(j);
-            j++;
-        }
-        for (PDGameV2 k : m_players) {
-            if (std::compareStr(name, k.getPlayerName())) {
-                //fdjhkgfhsfe
+        while (repeat) {
+            repeat=false;
+
+            std::cout<<"Enter player "<<(i+1)<<"'s name: ";
+            std::getline(std::cin,name);
+            if (name.empty()) {
+                name = "Anonymous Player "+std::to_string(j);
+                j++;
+            }
+            for (PDGameV2 k : m_players) {
+                if (name==k.getPlayerName()) {
+                    repeat=true;
+                    std::cout<<"That name is already taken.  Please enter a unique name.\n";
+                }
             }
         }
         m_players.emplace_back(name);
-
+        repeat=true;
     }
     std::cout <<
            "Let's Play PIG Dice!\n * See which player will reach 50 points in the fewest turns.\n * Turn ends when you hold or roll a 1.\n * If you roll a 1, you lose all points for the turn.\n * If you hold, you bank all points for the turn to the game score. \n";
