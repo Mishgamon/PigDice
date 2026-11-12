@@ -9,9 +9,23 @@ void Multiplayer::startAllGames() {
     int playerz = 0;
     bool repeat = true;
     std::string name;
-    std::cout<<"How many people are playing?  ";
-    std::cin>>playerz;
-    std::cin.ignore();
+    while (1==1) {
+        try {
+            std::cout<<"How many people are playing?  ";
+            std::cin>>playerz;
+            if (std::cin.fail()){throw 256;}
+            if (playerz>5||playerz<1){throw 21;}
+            std::cin.ignore();
+            break;
+        }catch (int e) {
+
+            std::cin.clear();
+            std::cin.ignore(100,'\n');
+            std::cerr<<"\nEnter an integer from 1-5."<<std::endl;
+
+
+        }
+    }
     int j = 1;
     for (int i = 0; i < playerz;i++) {
 
