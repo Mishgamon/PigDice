@@ -4,6 +4,7 @@
 
 #include "Multiplayer.h"
 #include <iostream>
+#include <vector>
 
 void Multiplayer::startAllGames() {
     int playerz = 0;
@@ -56,11 +57,11 @@ void Multiplayer::startAllGames() {
             m_players.at(i).playGame();
             std::cout << "\n\n";
             targetScoreCheck(m_players.at(i).getScore());
-            displayPoints(m_players);
+            displayPoints();
             std::cout << "\n\n";
         }
     }
-    declareWinner(m_players);
+    declareWinner();
 }
 
 bool Multiplayer::targetScoreCheck(int score) {
@@ -73,20 +74,20 @@ bool Multiplayer::targetScoreCheck(int score) {
     return false;
 }
 
-void Multiplayer::declareWinner(std::vector<PDGameV2> &players) {
+void Multiplayer::declareWinner() {
     std::cout<<"Congratulations!  ";
-    std::vector<PDGameV2> x;
+    std::vector<PDGameV2> over50;
     for (PDGameV2 i: m_players) {
-        if (i.getScore()>=50)x.push_back(i);
+        if (i.getScore()>=50)over50.push_back(i);
     }
     std::string S = "Lord Chen";
     PDGameV2 winner(S);
     bool tie = false;
-    for (PDGameV2 i:x) {
+    for (PDGameV2 i:over50) {
         if (i.getScore()>winner.getScore())winner=i;
         else if (i.getScore()==winner.getScore()) {
             bool greatest = true;
-            for (PDGameV2 j:x) {
+            for (PDGameV2 j:over50) {
                 if (j.getScore()>winner.getScore())greatest=false;
             }
             if (greatest) {
@@ -100,7 +101,7 @@ void Multiplayer::declareWinner(std::vector<PDGameV2> &players) {
     else std::cout<<winner.getPlayerName()<<" you tied with a score of "<<winner.getScore();
 }
 
-int Multiplayer::displayPoints(std::vector<PDGameV2> &players) {
+int Multiplayer::displayPoints() {
 
     for (PDGameV2 i:m_players) {
         std::cout<<i.getPlayerName()<<" (Score: "<<i.getScore()<<") | ";

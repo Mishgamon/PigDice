@@ -16,9 +16,9 @@ public:
     ~Multiplayer();
     void startAllGames();
 private:
-    int displayPoints(std::vector<PDGameV2> &players);
+    int displayPoints();
     bool targetScoreCheck(int score);
-    void declareWinner(std::vector<PDGameV2> &players);
+    void declareWinner();
 
 
 };
