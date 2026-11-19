@@ -46,15 +46,15 @@ void Turn::takeTurn() {
       m_turnCount++;
       std::cout << " (Score:" << m_parentGame->getGameScore() << ") - TURN "<<m_turnCount;//9th Step. (The end)
       while (!m_turnOver) {
-          std::cout << "\nroll or hold? (r/h): ";
-          std::cin.ignore(1)>>m_choice;
+          std::cout << "\nroll or hold? (r/h):";
+          std::cin>>m_choice;
+          std::cin.ignore(1000,'\n');
           if (m_choice == 'r') {
               roll();
           }else if (m_choice!='h'){
               std::cout << "\nInvalid Entry.  Please use 'r' for ''roll'' or 'h' for ''hold''.";
 
-          }
-          else {
+          }else {
               m_turnOver=true;
               std::cout<<"\nScore banked this turn: "<<m_scoreThisTurn;
           }
