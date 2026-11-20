@@ -61,7 +61,8 @@ void Multiplayer::startAllGames() {
             std::cout << "\n\n";
         }
     }
-    declareWinner();
+    std::cout<<"Congratulations!  ";
+    declareWinner(0,1);
 }
 
 bool Multiplayer::targetScoreCheck(int score) {
@@ -74,9 +75,9 @@ bool Multiplayer::targetScoreCheck(int score) {
     return false;
 }
 
-void Multiplayer::declareWinner() {
-    std::cout<<"Congratulations!  ";
-    std::vector<PDGameV2> over50;
+void Multiplayer::declareWinner(int index, int next) {
+
+/*    std::vector<PDGameV2> over50;
     for (PDGameV2 i: m_players) {
         if (i.getScore()>=50)over50.push_back(i);
     }
@@ -99,6 +100,14 @@ void Multiplayer::declareWinner() {
     }
     if (!tie)std::cout<<winner.getPlayerName()<<" you win with a score of "<<winner.getScore();
     else std::cout<<winner.getPlayerName()<<" you tied with a score of "<<winner.getScore();
+    */
+    if (m_players.size()<=next+1) {
+        std::cout<<m_players.at(index).getPlayerName()<<" you win with a score of "<<m_players.at(index).getScore();
+
+    }
+    else if (m_players.at(index)>m_players.at(next)) {
+    declareWinner(index,next+1);
+}else declareWinner(next,next+1);
 }
 
 int Multiplayer::displayPoints() {

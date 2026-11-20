@@ -18,7 +18,7 @@ public:
 private:
     int displayPoints();
     bool targetScoreCheck(int score);
-    void declareWinner();
+    void declareWinner(int index,int next);
 
 
 };

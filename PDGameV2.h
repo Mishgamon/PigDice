@@ -19,6 +19,12 @@ public:
     std::string getPlayerName();
     void playGame();
     int getScore();
+    bool operator>(PDGameV2 righto) {
+        if (this->getScore()>=righto.getScore()) {
+            return true;
+        }else return false;
+    }
+
 private:
     void displayRules();
 
