@@ -56,7 +56,7 @@ void Multiplayer::startAllGames() {
             std::cout<<m_players.at(i).getPlayerName();
             m_players.at(i).playGame();
             std::cout << "\n\n";
-            targetScoreCheck(m_players.at(i).getScore());
+            targetScoreCheck(m_players.at(i).getGameScore());
             displayPoints();
             std::cout << "\n\n";
         }
@@ -101,8 +101,8 @@ void Multiplayer::declareWinner(int index, int next) {
     if (!tie)std::cout<<winner.getPlayerName()<<" you win with a score of "<<winner.getScore();
     else std::cout<<winner.getPlayerName()<<" you tied with a score of "<<winner.getScore();
     */
-    if (m_players.size()<=next+1) {
-        std::cout<<m_players.at(index).getPlayerName()<<" you win with a score of "<<m_players.at(index).getScore();
+    if (m_players.size()<=next) {
+        std::cout<<m_players.at(index).getPlayerName()<<" you win with a score of "<<m_players.at(index).getGameScore();
 
     }
     else if (m_players.at(index)>m_players.at(next)) {
@@ -113,7 +113,7 @@ void Multiplayer::declareWinner(int index, int next) {
 int Multiplayer::displayPoints() {
 
     for (PDGameV2 i:m_players) {
-        std::cout<<i.getPlayerName()<<" (Score: "<<i.getScore()<<") | ";
+        std::cout<<i.getPlayerName()<<" (Score: "<<i.getGameScore()<<") | ";
     }
 }
 

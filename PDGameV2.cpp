@@ -18,11 +18,11 @@ void PDGameV2::displayRules() {
 
 void PDGameV2::playGame() {
     m_myTurn.resetTurnOver();
-m_myTurn.takeTurn();
+m_myTurn.takeTurn(m_gameScore);
     m_gameScore+=m_myTurn.getScoreThisTurn();
 }
 
-int PDGameV2::getScore() {
+int PDGameV2::getGameScore() {
     return m_gameScore;
 }
 

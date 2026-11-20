@@ -25,7 +25,7 @@ int PDGame::getGameScore() {//Step 2
 
 void PDGame::playGame() {
     while (!m_gameOver) {
-        m_myTurn.takeTurn();
+        m_myTurn.takeTurn(m_gameScore);
         m_gameScore+=m_myTurn.getScoreThisTurn();
         std::cout << "\n";
         if (m_gameScore>=20)m_gameOver=true;

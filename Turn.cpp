@@ -42,9 +42,9 @@ int Turn::getTurnCount() {
     return m_turnCount;
 }
 
-void Turn::takeTurn() {
+void Turn::takeTurn(int score) {
       m_turnCount++;
-      std::cout << " (Score:" << m_parentGame->getGameScore() << ") - TURN "<<m_turnCount;//9th Step. (The end)
+      std::cout << " (Score:" << score << ") - TURN "<<m_turnCount;//9th Step. (The end)
       while (!m_turnOver) {
           std::cout << "\nroll or hold? (r/h):";
           std::cin>>m_choice;

@@ -19,7 +19,7 @@ private://access specifier
 public:
     Turn();
     void setParentGame(PDGame* Papaoutai);//Step 5, we go into OVERDRIVE
-    void takeTurn();
+    void takeTurn(int score);
     int getScoreThisTurn();
     void resetTurnOver();
     int getTurnCount();

@@ -18,9 +18,9 @@ public:
     ~PDGameV2();
     std::string getPlayerName();
     void playGame();
-    int getScore();
+    int getGameScore();
     bool operator>(PDGameV2 righto) {
-        if (this->getScore()>=righto.getScore()) {
+        if (this->getGameScore()>=righto.getGameScore()) {
             return true;
         }else return false;
     }
